@@ -73,20 +73,22 @@ using namespace std;
 
 void isValley()
 {
-    int a, b = -1;
-    bool increasing;
     int len;
     int count = 0;
-    cin>>len;
+    cin >> len;
     vector<int> arr;
     for (int i = 0; i < len; i++)
     {
+        int a;
         cin >> a;
-        arr.push_back(a);
+        if (i == 0 or a != arr.back())
+        {
+            arr.push_back(a);
+        }
     }
-    for (int i = 0; i < len; i++)
+    for (int i = 0; i < arr.size(); i++)
     {
-        if ((i == 0 || arr[i - 1] > arr[i]) && (i == len - 1 || arr[i] < arr[i + 1]))
+        if ((i == 0 || arr[i - 1] > arr[i]) && (i == arr.size() - 1 || arr[i] < arr[i + 1]))
         {
             count++;
         }

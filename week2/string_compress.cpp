@@ -2,67 +2,47 @@
 
 using namespace std;
 
-int compress(vector<char> &chars)
+class Solution
 {
-    char lastchar = chars[0];
-    int count = 0;
-    int pointer = 0;
-    int s = chars.size();
-    if (s == 1)
+public:
+    int compress(vector<char> &chars)
     {
-        return 1;
-    }
-    int anothercount=0;
-
-    for (int i = 0; i < s; i = i)
-    {
-        if (lastchar == chars[i])
+        char last = chars[0];
+        int count = 1;
+        auto lastpointer = chars.begin();
+        for (auto i = chars.begin() + 1; i <= chars.end(); i++)
         {
-            count++;
-            chars.erase(chars.begin() + i);
-            i++;
-        }
-        else
-        {
-            if (count == 1)
+            if (*i == last)
             {
-                i++;
-                anothercount++;
-                continue;
+                count++;
             }
             else
             {
-                chars.insert(chars.begin() + anothercount, lastchar);
-                i++;
-                anothercount++;
-                string s = to_string(count);
-                for (int j = 0; i < s.size(); j++)
+                if (count == 1)
                 {
-                    chars.insert(chars.begin() + i, s[i]);
-                    i++;
-                    anothercount++;
+                    continue;
                 }
+                chars.erase(lastpointer, i);
+                string c = to_string(count);
+                for (int j = 0; j < c.size(); j++)
+                {
+                    chars.insert(i, c[j]);
+                    i++;
+                }
+                lastpointer = i;
             }
-
-            count = 0;
+            last = *i;
         }
-        lastchar = chars[i];
+
+        return chars.size();
     }
-    return count;
-}
+};
 
 int main()
 {
-    int t;
-    scanf("%d", &t);
-    vector<char> a(t);
-    int f = 0;
-    while (f < t)
-    {
-        cin >> a[f];
-        f++;
-    }
-    cout << compress(a) << endl;
+    Solution s;
+    vector<char> a{'a', 'a', 'a', 'b'};
+    s.compress(a);
     for (auto &&i : a)
     {
         cout << i << " ";

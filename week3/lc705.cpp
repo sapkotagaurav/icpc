@@ -10,11 +10,7 @@ private:
     int data ;
 
 public:
-    MyHashSet(int key)
-    {
-        data = key;
-
-    }
+    
     MyHashSet()
     {
 
@@ -25,14 +21,18 @@ public:
         
         if (key<data){
             if(this->left == NULL){
-                this->left = new MyHashSet(key);
+                MyHashSet *temp = new MyHashSet();
+                temp->data = key;
+                this->left = temp;
                 return;
             }
             left->add(key);
 
         }else{
             if(this->right == NULL){
-                this->right = new MyHashSet(key);
+                MyHashSet *temp = new MyHashSet();
+                temp->data = key;
+                this->left = temp;
                 return;
             }
             right->add(key);
@@ -86,12 +86,12 @@ public:
         return 1 + max(left->height(),right->height());
     }
 
-    bool contains(int key)
+    string contains(int key)
     {
         if(this == NULL)
-            return false;
+            return "false";
         if (this->data == key){
-            return true;
+            return "true";
         }
         if (key<data){
             return left->contains(key);
@@ -101,26 +101,19 @@ public:
         }
 
     }
-    void printTree(){
-        if(this == NULL){
-            return ;
-        }
-        
-        left->printTree();
-        cout<<this->data<<endl;
-        
-        right->printTree();
-
-        
-
-        
-    }
+    
 };
 
 
 int main(){
 
     MyHashSet *a = new MyHashSet();
+    a->add(5);
+    a->add(7);
+    a->add(6);
+    a->add(1);
+    a->remove(1);
+    cout<<a->contains(1)<<endl;
     
-    a->printTree();
+    
 }

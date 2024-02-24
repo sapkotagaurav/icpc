@@ -5,16 +5,16 @@ using namespace std;
 
 class Solution {
 public:
-    int helper(vector<int> &nums, int i){
-        if (i==nums.size()-1)
-        {
-            return nums[i];
-        }
-        return max(nums[i]+helper(nums,i+2),helper(nums,i+1));
-        
-    }
     int rob(vector<int>& nums) {
-        return helper(nums,0);
+        int r1=0;
+        int r2 =0;
+        for (int i = 0; i < nums.size(); i++)
+        {
+           int temp = max(nums[i]+r1,r2);
+           r1=r2;
+           r2=temp;
+        }
+        return r2;
         
     }
 

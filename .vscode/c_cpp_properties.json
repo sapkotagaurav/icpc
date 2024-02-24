@@ -2,6 +2,7 @@
     "configurations": [
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
@@ -13,6 +14,8 @@
             "cppStandard": "gnu++17",
             "intelliSenseMode": "linux-gcc-x64"
 =======
+=======
+>>>>>>> 4e644d2d65f14bd1c4a2cf419d4e3415b0e82a1d
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**"
@@ -27,7 +30,22 @@
             "cStandard": "c17",
             "cppStandard": "c++17",
             "intelliSenseMode": "windows-msvc-x64"
+<<<<<<< HEAD
 >>>>>>> 0228d18339d7498cba8b8ee32a985e023fb6e61e
+=======
+=======
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/graph"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "linux-gcc-x64"
+>>>>>>> 6d7d8e3d59e857847133fa21145a71c29589187c
+>>>>>>> 4e644d2d65f14bd1c4a2cf419d4e3415b0e82a1d
         }
     ],
     "version": 4

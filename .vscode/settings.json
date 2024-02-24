@@ -3,6 +3,11 @@
         "iostream": "cpp",
         "*.tcc": "cpp",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        "vector": "cpp"
+=======
+>>>>>>> 4e644d2d65f14bd1c4a2cf419d4e3415b0e82a1d
         "iomanip": "cpp",
         "ostream": "cpp",
         "cctype": "cpp",
@@ -90,8 +95,12 @@
         "typeinfo": "cpp",
         "valarray": "cpp",
         "variant": "cpp"
+<<<<<<< HEAD
 =======
         "vector": "cpp"
 >>>>>>> 0228d18339d7498cba8b8ee32a985e023fb6e61e
+=======
+>>>>>>> 6d7d8e3d59e857847133fa21145a71c29589187c
+>>>>>>> 4e644d2d65f14bd1c4a2cf419d4e3415b0e82a1d
     }
 }

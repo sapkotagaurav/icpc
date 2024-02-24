@@ -2,6 +2,7 @@
     "files.associations": {
         "iostream": "cpp",
         "*.tcc": "cpp",
+<<<<<<< HEAD
         "iomanip": "cpp",
         "ostream": "cpp",
         "cctype": "cpp",
@@ -89,5 +90,8 @@
         "typeinfo": "cpp",
         "valarray": "cpp",
         "variant": "cpp"
+=======
+        "vector": "cpp"
+>>>>>>> 0228d18339d7498cba8b8ee32a985e023fb6e61e
     }
 }
